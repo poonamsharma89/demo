@@ -1,0 +1,5 @@
+<h3>COLOR COMPONENT</h3>
+<ul class="list-group" >
+    <!-- <li class="list-group-item">{{ color }}</li> --> <!-- we will send color to child component to be displayed-->
+    <app-color-item *ngFor = 'let color of allColors' [colorFromParent]="color" (removeEmitter)="removeColor($event)"></app-color-item>
+</ul>

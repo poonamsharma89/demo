@@ -1,0 +1,16 @@
+<div class="container m-5 bg-info">
+    <div class=" row m-5">
+        <div class="col-12 m-5">
+            Message: <input type="text" [(ngModel)]="valueMsg" >
+            <button class="btn btn-danger ml-5" (click)="sending()">Send to child</button>
+            <button class="btn btn-success ml-5" (click)="toggleChild()">Toggle child</button>
+        </div>
+    <div>
+    <div class="row" *ngIf="showChild">
+        <div class="col-12 m-5">
+            <app-child [msgFromParent] = "msgToChild"></app-child>
+        </div>
+    </div>
+</div> 
+
+

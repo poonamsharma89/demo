@@ -1,0 +1,69 @@
+<div class="container">
+    <form (ngSubmit)="updateData()" [formGroup]="reactiveForm">
+        <div class="card" [ngClass]="{'border border-success': status=='VALID', 'border border-danger': status=='INVALID'}">
+            <div class="card-title bg-primary text-light">
+                <div class="m-2">EDIT A STUDENT</div>
+            </div>
+            <div class="card-body">
+               
+            <div formGroupName="personalData">
+                <div class="form-group">
+                    <label for="studName"> Student Name:</label>
+                    <input 
+                        type="text" 
+                        class="form-control"  
+                        id="studName"
+                        formControlName="rsName">
+                        <div *ngIf="reactiveForm.get('personalData.rsName')?.invalid">
+                            <div *ngIf="reactiveForm.get('personalData.rsName')?.errors?.['required']" class="text-danger small">
+                                Student Name is required!
+                            </div>
+                            <div *ngIf="reactiveForm.get('personalData.rsName')?.errors?.['minlength']" class="text-danger small">
+                                Student Name should be minimum 2 characters!
+                            </div>
+                            <div *ngIf="reactiveForm.get('personalData.rsName')?.errors?.['invalidText']" class="text-danger small">
+                                Student Name should only alphabets!
+                            </div>
+                        </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="studMark"> Student Mark:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="studMark"
+                        formControlName="rsMark">
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                <label for="studDOB"> Student DOB:</label>
+                <input type="date-local" class="form-control" id="studDOB" formControlName="rsDOB">
+            </div>
+
+            Student Gender:
+            <div class="form-check-inline">
+                <span *ngFor="let gender of allGenders">
+                    <label class="form-check-label m-1">
+                        <input 
+                            type="radio" 
+                            class="form-check-input" 
+                            [value]="gender.value"
+                            formControlName="rsGender">
+                        {{ gender.value }}
+                    </label>
+                </span>
+            </div>
+
+            </div>
+            <div class="card-footer bg-primary">
+                <button type="button" class="btn btn-light text-primary m-2" (click)="attachValidator()">ATTACH VALIDATOR</button>
+                <button type="submit" class="btn btn-light text-primary m-2">UPDATE</button>
+                <button type="button" class="btn btn-light text-primary m-2" (click)="resetData()">RESET</button>
+            </div>
+        </div>
+    </form>
+</div>
+

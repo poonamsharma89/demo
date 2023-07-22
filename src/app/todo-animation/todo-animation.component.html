@@ -1,0 +1,13 @@
+<div class="container text-left m-5 p-5">
+    <h2> TO DO LIST</h2>
+    <div class="form-group">
+        <input type="text" class="form-control" (keyup.enter)="addToList()"[(ngModel)]="work">
+    </div>
+    <div *ngIf="toDoList" class="list-group" >
+        <button 
+            @fade
+            *ngFor="let todo of toDoList" 
+            class="list-group-item text-left" 
+            (click)="removeFromList(todo)">{{todo}}</button>
+    </div>
+</div>

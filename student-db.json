@@ -1,0 +1,98 @@
+{
+  "students": [
+    {
+      "id": 101,
+      "studentName": "Ram Mohan",
+      "studentTotalMarks": 358,
+      "studentDOB": "1910-11-11T05:00:00.000Z",
+      "studentGender": "Male"
+    },
+    {
+      "id": 104,
+      "studentName": "Meena Kumari",
+      "studentTotalMarks": "450",
+      "studentDOB": "1913-01-12T05:00:00.000Z",
+      "studentGender": "Female"
+    },
+    {
+      "id": 107,
+      "studentName": "Ramya Raj",
+      "studentTotalMarks": "500",
+      "studentDOB": "2023-01-01T00:00:00.000Z",
+      "studentGender": "Female"
+    },
+    {
+      "id": 108,
+      "studentName": "Prakash Mohan",
+      "studentTotalMarks": "300",
+      "studentDOB": "2023-01-02T00:00:00.000Z",
+      "studentGender": "Male"
+    },
+    {
+      "id": 109,
+      "studentName": "Chitra Mohan",
+      "studentTotalMarks": "330",
+      "studentDOB": "2023-01-08T17:12:41.231Z",
+      "studentGender": "Male"
+    },
+    {
+      "id": 110,
+      "studentName": "",
+      "studentTotalMarks": "",
+      "studentDOB": null,
+      "studentGender": ""
+    },
+    {
+      "id": 111,
+      "studentName": "Test",
+      "studentTotalMarks": "200",
+      "studentDOB": "2023-01-03T00:00:00.000Z",
+      "studentGender": "Male"
+    },
+    {
+      "id": 112,
+      "studentName": "",
+      "studentTotalMarks": "",
+      "studentDOB": null,
+      "studentGender": ""
+    },
+    {
+      "id": 113,
+      "studentName": "Test",
+      "studentTotalMarks": "300",
+      "studentDOB": "2023-01-02T00:00:00.000Z",
+      "studentGender": "Male"
+    },
+    {
+      "id": 114,
+      "studentName": "Test",
+      "studentTotalMarks": "400",
+      "studentDOB": "2023-01-03T00:00:00.000Z",
+      "studentGender": "Male"
+    },
+    {
+      "id": 115,
+      "studentName": "asd",
+      "studentTotalMarks": "",
+      "studentDOB": null,
+      "studentGender": ""
+    }
+  ],
+  "users": [
+    {
+      "uName": "admin",
+      "uPassword": "admin",
+      "token": "dummy-token"
+    },
+    {
+      "uName": "abc",
+      "uPassword": "123",
+      "token": "dummy-token"
+    },
+    {
+      "uName": "lmn",
+      "uPassword": "456",
+      "token": "dummy-token"
+    }
+  ]
+}

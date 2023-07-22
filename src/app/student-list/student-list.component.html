@@ -1,0 +1,51 @@
+<div class="container m-5 p-5">
+    
+    <h2>LIST OF STUDENTS</h2>
+    <div class="form-group">
+        <input 
+            type="text" 
+            [(ngModel)]="filterData" 
+            class="form-control" 
+            placeholder="Search By Gender"
+            (keyup)="filterByGender()">
+    </div>
+    <table class="table table-striped">
+        <thead class="bg-dark text-white">
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>TOTAL MARKS</th>
+                <th>PERCENTAGE</th>
+                <th>DOB</th>
+                <th>GENDER</th>
+                <th>RESULT</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr 
+                appHoverHighlight
+                *ngFor="let student of filterStudents">
+                <!-- *ngFor="let student of allStudents | filterList: filterData"> -->
+                <!-- [ngClass]="{'bg-danger': student.studentTotalMarks<250}" -->
+                
+                <td>{{ student.id }}</td>
+                <td>{{ student.studentName | uppercase}}</td>
+                <!-- <td>{{ student.studentTotalMarks }}</td> -->
+                <td><input type="text" [(ngModel)]="student.studentTotalMarks"></td>
+                <!-- <td>{{ student.studentTotalMarks / 500 * 100 | number:'1.2'}}</td> -->
+                <!-- <td>{{ student.studentTotalMarks / 500 | percent}}</td> --> <!-- here percent is an in-built pipe-->
+                <td>{{ student.studentTotalMarks | custompercent: 2}}</td>
+                <td>{{ student.studentDOB | date: 'medium' | uppercase}}</td>
+                <td>{{ student.studentGender | lowercase }}</td>
+                <td>
+                    <h5 *ngIf="student.studentTotalMarks<250">Fail</h5>
+                    <h5 *ngIf="student.studentTotalMarks>250">Pass</h5>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button class="btn btn-success" (click)="addStudent()">Add Test Student</button>
+    </div>
+</div>

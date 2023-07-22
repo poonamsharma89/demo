@@ -1,0 +1,30 @@
+Steps
+-------
+1. build the angular appln
+    ng build
+2. install nginx server
+3. copy the contents os dist folder to html folder of nginx
+4. add configurations (listed below) in NGINX.conf files
+5. start the nginx server
+6. open browser and type http://localhost:6565
+
+
+
+
+
+
+add this to nginx.conf files
+---------------------------
+server {
+ listen 6565;
+ server_name localhost;
+location / {
+ root html;
+ index index.html index.htm;
+ try_files $uri $uri/ /index.html;
+ }
+error_page 500 502 503 504 /50x.html;
+ location = /50x.html {
+ root html;
+ }
+ }

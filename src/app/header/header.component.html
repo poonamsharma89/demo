@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <ul class="navbar-nav">
+        <li class="nav-item" routerLinkActive="highlight" [routerLinkActiveOptions]="{exact: true}">
+            <!-- <a class="nav-link" href="display">DISPLAY COMPONENT ||</a> -->
+            <a class="nav-link" routerLink="">DISPLAY COMPONENT ||</a>
+        </li>
+        <li class="nav-item" routerLinkActive="highlight">
+            <!-- <a class="nav-link" href="color">COLOR COMPONENT ||</a> -->
+            <a class="nav-link" [routerLink]="'color'">COLOR COMPONENT ||</a>
+        </li>
+        <li class="nav-item" routerLinkActive="highlight">
+            <!-- <a class="nav-link" href="todo">TODO COMPONENT ||</a> -->
+            <!-- routerLink="todo"    here we are using absolute route path-->
+            <a class="nav-link" routerLink="todo">TODO COMPONENT ||</a> 
+        </li>
+        <li class="nav-item" routerLinkActive="highlight">
+            <!-- <a class="nav-link" href="student">STUDENT COMPONENT ||</a> -->
+            <a class="nav-link" [routerLink]="'student'">STUDENT COMPONENT ||</a>
+        </li>
+        
+        <li class="nav-item" routerLinkActive="highlight">
+            <a class="nav-link" routerLink="lifecycle">LIFECYCLE COMPONENT ||</a>
+        </li>
+        <li class="nav-item" routerLinkActive="highlight">
+            <a class="nav-link" routerLink="weather">WEATHER COMPONENT ||</a>
+        </li>
+        <li class="nav-item" routerLinkActive="highlight">
+            <!-- <a class="nav-link" href="student-http">STUDENT HTTP COMPONENT ||</a> -->
+            <a class="nav-link" routerLink="login">LOGIN COMPONENT ||</a>
+        </li>
+        <li class="nav-item" routerLinkActive="highlight">
+            <!-- <a class="nav-link" href="student-http">STUDENT HTTP COMPONENT ||</a> -->
+            <a class="nav-link" routerLink="logout">LOGOUT COMPONENT ||</a>
+        </li>
+    </ul>
+</nav>
+

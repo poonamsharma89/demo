@@ -1,0 +1,54 @@
+<div class="container m-5 p-5">
+    
+    <h2>LIST OF STUDENTS</h2>
+    <div class="form-group">
+        <input 
+            type="text" 
+            [(ngModel)]="filterData" 
+            class="form-control" 
+            placeholder="Search By Gender"
+            (keyup)="filterByGender()">
+    </div>
+    <h5 class="text-danger small">{{ deleteMessage }}</h5>
+    <table class="table table-striped">
+        <thead class="bg-dark text-white">
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>TOTAL MARKS</th>
+                <th>PERCENTAGE</th>
+                <th>DOB</th>
+                <th>GENDER</th>
+                <th>RESULT</th>
+                <th>EDIT</th>
+                <th>REMOVE</th>
+                <th>VIEW</th>
+                <th>GO TO EDIT</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of filterStudents">
+                <td>{{ student.id }}</td>
+                <td *ngIf="toggleEditId!=student.id">{{ student.studentName | uppercase}}</td>
+                <td *ngIf="toggleEditId==student.id"><input type="text" [(ngModel)]="student.studentName"></td>
+                <td *ngIf="toggleEditId!=student.id">{{ student.studentTotalMarks }}</td>
+                <td *ngIf="toggleEditId==student.id"><input type="text" [(ngModel)]="student.studentTotalMarks"></td>
+                <td>{{ student.studentTotalMarks | custompercent: 2}}</td>
+                <td>{{ student.studentDOB | date: 'medium' | uppercase}}</td>
+                <td>{{ student.studentGender | lowercase }}</td>
+                <td>
+                    <h5 *ngIf="student.studentTotalMarks<250">Fail</h5>
+                    <h5 *ngIf="student.studentTotalMarks>250">Pass</h5>
+                </td>
+                <td *ngIf="toggleEditId!=student.id"><button type="button" class="btn btn-primary" (click)="editStudent(student)">Edit</button></td>
+                <td *ngIf="toggleEditId==student.id"><button type="button" class="btn btn-warning" (click)="editStudent(student)">Update</button></td>
+                <td><button type="button" class="btn btn-danger" (click)="removeStudent(student)">Remove</button></td>
+                <td><button type="button" class="btn btn-success" (click)="viewStudent(student)">View</button></td>
+                <td><button type="button" class="btn btn-primary" (click)="goToEditStudent(student.id)">Go To Edit</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button class="btn btn-success" (click)="addStudent()">Add Student</button>
+    </div>
+</div>

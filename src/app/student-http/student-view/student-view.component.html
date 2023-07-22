@@ -1,0 +1,20 @@
+<div class="container">
+    <div *ngIf="displayStudent.id!=0">
+    <div class="card">
+        <div class="card-title bg-warning">
+            STUDENT INFORMATION
+        </div>
+        <div class="card-body">
+            <h5>Student ID : </h5>{{ displayStudent.id }}
+            <h5>Student Name : </h5>{{ displayStudent.studentName }}
+            <h5>Student Mark : </h5>{{ displayStudent.studentTotalMarks }}
+            <h5>Student DOB : </h5>{{ displayStudent.studentDOB }}
+            <h5>Student Gender : </h5>{{ displayStudent.studentGender }}
+
+        </div>
+        <div class="card-footer bg-dark text-light">
+            <a routerLink="/student-http">Go Back</a>
+        </div>
+    </div>
+    </div>
+</div>

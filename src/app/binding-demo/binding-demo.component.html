@@ -1,0 +1,32 @@
+<h5> BINDING DEMO COMPONENT</h5>
+<div>
+    <h5>Movie Name displayed using String Interpolation </h5>
+</div>
+<div>
+    Movie Name : {{ movieName }}
+</div>
+<div>
+    <h5>Movie Name displayed using Property Binding - []</h5>
+</div>
+<div>
+    <div>
+        Movie Name : <input type="text" value="{{movieName}}">
+    </div>
+    <div>
+        Movie Name : <input type="text" [value]="movieName">
+    </div>
+</div>
+<div>
+    <h5>Movie Name displayed using Event Binding - ()</h5>
+</div>
+<button type="button" (click)="showMovie()">Display Movie Name</button>
+{{ movieName }}
+<div>
+    <h5>Counter demo using two way property binding</h5>
+</div>
+<div>
+    <button type="button" (click)="decrementCounter()">-</button>
+    <!-- <input type="text" [value]="counter"> -->
+    <input type="text" [(ngModel)]="counter">
+    <button type="button" (click)="incrementCounter()">+</button>
+</div>

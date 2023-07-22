@@ -1,0 +1,10 @@
+<div class="container m-5 p-5 text-center">
+    <div class="container">
+        <button class="btn btn-primary mr-5" (click)="flipShowLifeCycleState()">{{showLifeCycleDemo ? 'End Lifecycle' : 'Start Lifecycle'}}</button>
+        <button class="btn btn-success ml-5" (click)="incrementCount()">Increment Counter</button>
+    </div>
+    <div class="text-left">
+        <app-lifecycle-child *ngIf="showLifeCycleDemo" [count]="count"></app-lifecycle-child>
+    </div>
+    
+</div>
